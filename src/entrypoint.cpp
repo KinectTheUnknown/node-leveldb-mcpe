@@ -80,7 +80,7 @@ private:
         options = leveldb_options_create();
         leveldb_options_set_create_if_missing(options, 1);
 
-        leveldb_options_set_compression(options, 2);
+        leveldb_options_set_compression(options, 4);
 
         char* err = NULL;
         leveldb_t* db = leveldb_open(options, arg, &err);
