@@ -18,10 +18,10 @@ class MinecraftAbstractIterator extends AbstractIterator {
       return
     }
 
-    const key = Buffer.from(this._store.iteratorKey(iterator)).toString()
-    const value = Buffer.from(this._store.iteratorValue(iterator)).toString()
+    const key = Buffer.from(this._store.iteratorKey(iterator))
+    const value = Buffer.from(this._store.iteratorValue(iterator))
     this._store.iteratorNext(iterator)
-    callback(null, key, value)
+    callback(null, Buffer.from(key), Buffer.from(value))
   }
 
   _end (callback) {
