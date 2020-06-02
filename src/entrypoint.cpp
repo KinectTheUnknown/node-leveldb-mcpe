@@ -118,7 +118,7 @@ private:
       return;
     }
 
-    Local<Object> input = info[0]->ToObject();
+    Local<Object> input = info[0].As<v8::Object>();
     const char* key_input = node::Buffer::Data(input);
     size_t key_input_sz = node::Buffer::Length(input);
 
@@ -167,11 +167,11 @@ private:
       return;
     }
 
-    Local<Object> input = info[0]->ToObject();
+    Local<Object> input = info[0].As<v8::Object>();
     const char* key_input = node::Buffer::Data(input);
     size_t key_input_sz = node::Buffer::Length(input);
 
-    input = info[1]->ToObject();
+    input = info[1].As<v8::Object>();
     const char* value_input = node::Buffer::Data(input);
     size_t value_input_sz = node::Buffer::Length(input);
 
@@ -205,7 +205,7 @@ private:
       return;
     }
 
-    Local<Object> input = info[0]->ToObject();
+    Local<Object> input = info[0].As<v8::Object>();
     const char* key_input = node::Buffer::Data(input);
     size_t key_input_sz = node::Buffer::Length(input);
 
