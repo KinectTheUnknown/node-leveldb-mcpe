@@ -69,7 +69,7 @@ private:
         return;
       }
 
-      String::Utf8Value str(info[0]); // `name`
+      String::Utf8Value str(NULL, info[0]); // `name`
       const char* arg = ToCString(str);
 
       if (strlen(arg) == 0) {
