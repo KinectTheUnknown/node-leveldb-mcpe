@@ -12,7 +12,7 @@ using v8::Object;
 using v8::String;
 using v8::Value;
 
-const char* ToCString(const String::Utf8Value& value) {
+const char* ToCString(const Nan::Utf8String& value) {
   if (!*value) {
     Nan::ThrowError("Failed convert argument to string");
   }
@@ -69,7 +69,7 @@ private:
         return;
       }
 
-      String::Utf8Value str(NULL, info[0]); // `name`
+      Nan::Utf8String str(info[0]); // `name`
       const char* arg = ToCString(str);
 
       if (strlen(arg) == 0) {
