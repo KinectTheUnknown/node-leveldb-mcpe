@@ -37,7 +37,7 @@ class MinecraftLevelDOWN {
 
   _open (options, callback) {
     this._store = new Database(this.location)
-    process.nextTick(function () { callback(null, this) }.bind(this))
+    process.nextTick(() => callback(null, this))
   }
 
   _put (key, value, options, callback) {
